@@ -3,6 +3,7 @@ FROM nginx:1.25-alpine
 COPY start.sh /usr/local/bin/
 
 RUN apk add --update bash \
+	&& apk add --update coreutils\
 	&& rm -rf /var/cache/apk/* \
 	&& chmod +x /usr/local/bin/start.sh
 
